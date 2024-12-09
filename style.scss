@@ -1,0 +1,565 @@
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-black.otf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-extrabold.otf);
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-semibold.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-regular.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-extralight.otf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-thin.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-black-italic.otf);
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-extrabold-italic.otf);
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-bold-italic.otf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-semibold-italic.otf);
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-medium-italic.otf);
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-regular-italic.otf);
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-light-italic.otf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-extralight-italic.otf);
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Chopin";
+    src: url(assets/font/chopin-thin-italic.otf);
+    font-weight: 100;
+    font-style: italic;
+}
+
+@keyframes scroll {
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    font-weight: normal;
+    font-size: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    color: initial;
+    font-family: inherit;
+    list-style: none;
+    vertical-align: baseline;
+    background: none;
+}
+
+$white: #ffffff;
+$black: #000000;
+$green: #C0E4B4;
+$grey: #AFB8BD;
+$purple: #101333;
+
+%padding {
+    padding: 1rem 3rem;
+
+    @media screen and (max-width: 768px) {
+        & {
+            padding: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        & {
+            padding: .5rem;
+        }
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "Chopin", sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    @extend %padding;
+    background: $purple;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header-title {
+    font-size: 24px;
+    color: $green;
+    text-transform: uppercase;
+}
+
+.header-title-bold {
+    font-weight: 700;
+    color: $green;
+}
+
+.header-list {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-list-a {
+    color: $green;
+    font-weight: 300;
+    transition: .3s;
+
+    &:hover {
+        font-weight: 900;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.main-hero {
+    background: linear-gradient(to bottom, $purple, $grey);
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.main-hero-title-letter {
+
+    &:nth-child(6),
+    &:nth-child(9) {
+        padding-right: 1.5rem;
+    }
+
+    font-size: 92px;
+    font-weight: 900;
+}
+
+.main-hero-descr {
+    text-align: center;
+    font-size: 20px;
+    color: $purple;
+    font-weight: 500;
+}
+
+.main-hero-features {
+    display: flex;
+    background: $grey;
+    gap: 1rem;
+    @extend %padding;
+
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+    }
+}
+
+.main-hero-features-card {
+    width: 30%;
+    flex: 1 1 auto;
+    display: flex;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+        .main-hero-features-card-title {
+            width: 50%;
+
+            @media screen and (max-width: 768px) {
+                & {
+                    width: 100%;
+                }
+            }
+        }
+
+        .main-hero-features-card-text {
+            width: 50%;
+            opacity: 1;
+
+            @media screen and (max-width: 768px) {
+                & {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.main-hero-features-card-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $green;
+    font-weight: 700;
+    font-size: 24px;
+    padding: .5rem;
+    color: $purple;
+    transition: .3s;
+}
+
+.main-hero-features-card-text {
+    width: 0%;
+    opacity: 0;
+    background: $purple;
+    padding: .5rem;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        & {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+.main-hero-features-card-text-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    color: $green;
+    width: 100%;
+}
+
+.main-hero-trusted {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    background: $grey;
+}
+
+.main-features-title {
+    font-size: 24px;
+    font-weight: 700;
+    @extend %padding;
+}
+
+.main-hero-trusted-wrapper {
+    display: flex;
+    align-items: center;
+    animation: scroll 10s linear infinite;
+    gap: 10rem;
+    padding-bottom: 1rem;
+}
+
+.main-hero-trusted-wrapper-img {
+    width: 10rem;
+}
+
+.main-pricing {
+    display: flex;
+    flex-direction: column;
+    background: $grey;
+    @extend %padding;
+}
+
+.main-pricing-title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.main-pricing-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.main-pricing-wrapper-card {
+    display: flex;
+    flex-direction: column;
+    background: $green;
+    border-radius: 1rem;
+    flex: 1 1 30%;
+    padding: 1rem;
+
+    &:nth-child(1) {
+        background: $purple;
+
+        .main-pricing-wrapper-card-title {
+            color: $white;
+        }
+
+        .main-pricing-wrapper-card-ul-li {
+            color: $green;
+        }
+    }
+}
+
+.main-pricing-wrapper-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.main-pricing-wrapper-card-ul {
+    flex: 1 1 auto;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-pricing-wrapper-card-ul-li {
+    font-weight: 500;
+    color: $purple;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+        content: "•";
+        font-weight: 700;
+        left: 0;
+        position: absolute;
+    }
+}
+
+.main-pricing-wrapper-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-pricing-wrapper-price-title {
+    color: $purple;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.main-pricing-wrapper-price-a {
+    padding: .5rem 1.25rem;
+    background: $purple;
+    border-radius: 5rem;
+    color: $white;
+    font-weight: 700;
+    font-size: 18px;
+    transition: .3s;
+
+    &:hover {
+        background: $grey;
+        color: $purple;
+    }
+}
+
+.footer {
+    display: flex;
+    align-items: stretch;
+    background: $grey;
+    gap: 1rem;
+    @extend %padding;
+
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+    }
+}
+
+.footer-social {
+    width: 50%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+    }
+}
+
+.footer-social-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-social-row-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $purple;
+}
+
+.footer-social-row-copyright {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.footer-social-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-social-wrapper-img {
+    width: 2rem;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 50%;
+
+    &:hover {
+        filter: invert(100%);
+        background: $white;
+    }
+}
+
+.footer-contact {
+    width: 50%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media screen and (max-width: 480px) {
+        width: 100%;
+    }
+}
+
+.footer-contact-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $purple;
+    padding-bottom: .5rem;
+}
+
+.footer-contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contact-row-title {
+    font-weight: 500;
+}
+
+.footer-contact-row-a {
+    font-weight: 300;
+    color: $purple;
+    transition: .3s;
+
+    &:hover {
+        font-weight: 900;
+    }
+}
